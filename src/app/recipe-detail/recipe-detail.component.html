@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-xs-12">
+    <img src={{MyRecipee.imagePath}} alt={{MyRecipee.name}} class="img-responsive"
+    style="max-height: 300px ;"
+    >
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <h1>{{MyRecipee.name}}</h1>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="btn-group">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage Recipee</button>
+        <div class="dropdown-menu">
+          <a class="dropdown-item" (click)="toShopList()" >To Shopping List</a>
+          <a class="dropdown-item" (click)="editRecipee()">Edit Recipee</a>
+          <a class="dropdown-item" (click)="deleteRecipee()">Delete Recipee</a>
+        </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    {{MyRecipee.description}}
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <br>
+    <p>Ingredients Needed</p>
+    <ul class="list-group-item">
+      <li *ngFor="let ing of MyRecipee.ingredients">{{ing.name}} ({{ing.amount}})</li>
+      
+    </ul>
+  </div>
+</div>
